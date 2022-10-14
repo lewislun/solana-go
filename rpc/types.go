@@ -183,6 +183,13 @@ type TransactionMeta struct {
 	Status DeprecatedTransactionMetaStatus `json:"status"`
 
 	Rewards []BlockReward `json:"rewards"`
+
+	LoadedAddresses LoadedAddresses `json:"loadedAddresses"`
+}
+
+type LoadedAddresses struct {
+	Readonly []solana.PublicKey `json:"readonly"`
+	Writable []solana.PublicKey `json:"writable"`
 }
 
 type InnerInstruction struct {
